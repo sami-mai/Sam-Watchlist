@@ -9,9 +9,9 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    # message = 'Hi World!'
+    message = 'Hi World!'
     # print("hhhhh")
-    return render_template('index.html') #,message = message)
+    return render_template('index.html',message = message)
 
     # Getting popular movie
     # popular_movies = get_movies('popular')
@@ -29,10 +29,10 @@ def index():
 # @app.route('/movie/<movie_id>')
 
 # changed the dynamic part to <int:movie_id> to transform content to integer.
-# @app.route('/movie/<int:movie_id>')
-# def movie(movie_id):
+@app.route('/movie/<int:movie_id>')
+def movie(movie_id):
 
-    # '''
-    # View movie page function that returns the movie details page and its data
-    # '''
-    # return render_template('movie.html',id = movie_id)
+    '''
+    View movie page function that returns the movie details page and its data
+    '''
+    return render_template('movie.html',id = movie_id)
