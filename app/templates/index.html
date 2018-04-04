@@ -1,45 +1,54 @@
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html>
+<html> -->
+{% extends 'base.html'%}
+<!-- Template Inheritance -->
 {% import 'macros.html' as macro%}
 
-<head>
+<!-- <head>
   <meta charset="utf-8"> {% if title %}
   <title> {{ title }}</title>
   {% else %}
   <title> Welcome to the best Movie Review website </title>
   {% endif %}
-</head>
+</head> -->
 
-<body>
-  <h1> Hello World </h1>
-  <hr>
-  <!-- add a variable block that will be replaced with dynamic content from flask -->
-  <h1> {{ message }} </h1>
+<!-- <body> -->
 
-  <!-- Popular movie section  -->
-  <h3> Popular Movies</h3>
-  <ul>
-    <!-- {% for popular_movie in popular %}
+<!-- replace our HTML structure with our block content and place our body content inside the blocks -->
+<!-- Content block -->
+{% block content %}
+
+<h1> Hello World </h1>
+<hr>
+<!-- add a variable block that will be replaced with dynamic content from flask -->
+<h1> {{ message }} </h1>
+
+<!-- Popular movie section  -->
+<h3> Popular Movies</h3>
+<ul>
+  <!-- {% for popular_movie in popular %}
     <li>{{ popular_movie.title}}</li>
     {% endfor %} -->
-    {{ macro.displayMovieList(popular)}}
-  </ul>
-  <!-- Upcoming movie  -->
-  <h3> Upcoming Movies </h3>
-  <ul>
-    <!-- {% for upcoming_movie in upcoming %}
+  {{ macro.displayMovieList(popular)}}
+</ul>
+<!-- Upcoming movie  -->
+<h3> Upcoming Movies </h3>
+<ul>
+  <!-- {% for upcoming_movie in upcoming %}
     <li>{{ upcoming_movie.title}}</li>
     {% endfor %} -->
-    {{ macro.displayMovieList(upcoming)}}
-  </ul>
-  <!-- Now showing movie -->
-  <h3>Now Showing</h3>
-  <ul>
-    <!-- {% for now_showing_movie in now_showing %}
+  {{ macro.displayMovieList(upcoming)}}
+</ul>
+<!-- Now showing movie -->
+<h3>Now Showing</h3>
+<ul>
+  <!-- {% for now_showing_movie in now_showing %}
     <li>{{ now_showing_movie.title}}</li>
     {% endfor %} -->
-    {{ macro.displayMovieList(now_showing)}}
-  </ul>
-</body>
+  {{ macro.displayMovieList(now_showing)}}
+</ul>
 
-</html>
+{% endblock%}
+<!-- </body>
+
+</html> -->

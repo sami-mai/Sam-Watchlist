@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends 'base.html'%}
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -9,8 +10,15 @@
   {% endif %}
 </head>
 
-<body>
-  <h1> Hello Movie {{ id }} </h1>
-</body>
+<body> -->
 
-</html>
+<!-- Template Inheritance -->
+<!-- Content block -->
+{% block content %}
+<h1>
+  Hello Movie {{ id }}
+</h1> {% endblock%}
+
+<!-- </body>
+
+</html> -->
