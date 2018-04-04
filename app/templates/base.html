@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{% extends 'bootstrap/base.html'%}
+<!-- replace all the content in our base.html file -->
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -9,10 +11,15 @@
   {% endif %}
 </head>
 
-<body>
-  <!-- Content block -->
+<body> -->
+<!-- Content block -->
 
-  {% block content %} {% endblock%}
+<!-- {% block content %} {% endblock%}
 </body>
 
-</html>
+</html> -->
+
+<!-- create a bootstrap navbar and we can now include it in our base.html file. -->
+
+<!-- Navbar block  -->
+{% block navbar %} {% include 'navbar.html' %} {% endblock %}
