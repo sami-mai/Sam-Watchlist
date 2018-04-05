@@ -23,10 +23,19 @@
 <!-- Content block -->
 {% block content %}
 
-<h1> Hello World </h1>
-<hr>
+<!-- <h1> Hello World </h1> -->
+<!-- <hr> -->
 <!-- add a variable block that will be replaced with dynamic content from flask -->
-<h1> {{ message }} </h1>
+<!-- <h1> {{ message }} </h1> -->
+
+<!-- Search form -->
+<div class="container">
+  <form>
+    <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+    <input type="submit" value="Submit" class="btn btn-default">
+  </form>
+
+</div>
 
 <!-- Popular movie section  -->
 <h3> Popular Movies</h3>
