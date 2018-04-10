@@ -1,5 +1,6 @@
-from app import create_app
+from app import create_app, db
 from flask_script import Manager, Server, Shell
+from app.models import User
 
 
 # Creating app instance
@@ -17,8 +18,10 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 
+@manager.shell
+def make_shell_context():
+    return dict(app=app, db=db, User=User)
+
+
 if __name__ == '__main__':
-    # app.run(debug = True) ...remove the 'debug = True' argument from our
-    # app.run() because the debug mode has been enabled in the configuration
-    # file
     manager.run()
