@@ -1,19 +1,11 @@
 from flask import Flask
-# from .config import DevConfig
 from config import config_options
 from flask_bootstrap import Bootstrap
-
-# Initializing application
-# app = Flask(__name__)
-# connect our application with this new configuration file
-# app = Flask(__name__,instance_relative_config = True)
-
-# Setting up configuration
-# app.config.from_object(DevConfig)
-# app.config.from_pyfile('config.py')
+from flask_sqlalchemy import SQLAlchemy
 
 # Initializing Flask Extensions
 bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 
 def create_app(config_name):
@@ -25,6 +17,7 @@ def create_app(config_name):
 
     # Initializing flask extensions
     bootstrap.init_app(app)
+    db.init_app(app)
     # Registering the blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
@@ -33,6 +26,3 @@ def create_app(config_name):
     from .request import configure_request
     configure_request(app)
     return app
-# Will add the views and forms
-# from app import views
-# from app import error
